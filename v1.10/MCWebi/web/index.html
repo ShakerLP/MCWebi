@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MCWebi | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="dummy" rel="stylesheet">
+
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/{css}.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body><br>
+  <center><img width="25%" src="https://eriks-it.com/mcwebi_full.png">    </center>    <br>
+  
+<div class="container" style="width:30%">
+      <form class="form-signin" method="POST">
+        {login}
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required><br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      </form><br>
+	<center>&copy; 2016 MCWebi (v1.10) <a href="https://eriks-it.com/mcwebi_download.html">Download plugin</a></center>
+    </div> <!-- /container -->
+
+    <!-- /.container -->
+
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="../dist/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../dist/js/vendor/video.js"></script>
+    <script src="../dist/js/flat-ui.min.js"></script>
+<center>
+	<div class='btn-group'>
+		<button class='btn btn-default btn-xs dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Design | Current {css}<span class='caret'></span></button><ul class='dropdown-menu'>
+			<li><a href='?design=mcwebi&action='>MCWebi / Flat Default</a></li>
+			<li><a href='?design=bootstrap&action='>Bootstrap</a></li>
+			<li><a href='?design=darkly&action='>Darkly</a></li>
+			<li><a href='?design=flaty&action='>Flaty</a></li>
+			<li><a href='?design=superhero&action='>Superhero</a></li>
+			<li><a href='?design=yeti&action='>Yeti</a></li>
+			<li><a href='?design=lavish&action='>Lavish</a></li>
+			<li><a href='?design=paper&action='>Paper</a></li>
+			<li><a href='?design=united&action='>United</a></li>	
+			<li><a href='?design=cerulean&action='>Cerulean</a></li>	
+			<li><a href='?design=cosmo&action='>Cosmo</a></li>
+			<li><a href='?design=journal&action='>Journal</a></li>
+			<li><a href='?design=lumen&action='>Lumen</a></li>
+			<li><a href='?design=readable&action='>Readable</a></li>
+			<li><a href='?design=sandstone&action='>Sandstone</a></li>
+			<li><a href='?design=simplex&action='>Simplex</a></li>
+			<li><a href='?design=slate&action='>Slate</a></li>
+			<li><a href='?design=spacelab&action='>Spacelab</a></li>
+			
+		</ul>
+	</div>
+</center>
+  </body>
+</html>
