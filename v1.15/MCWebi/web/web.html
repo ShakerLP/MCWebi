@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- HTML 4.x -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- HTML5 -->
+<meta charset="utf-8">
+    <title>MCWebi | Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="dummy" rel="stylesheet">
+
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="../dist/js/vendor/jquery.min.js"></script>
+
+	<script src="../js/fileinput.min.js"></script>
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/{css}.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+	<style>
+	    textarea {
+        display: block;
+        margin: auto;
+        width: 600px;
+        height: 5px;
+    }
+    #editor_div {
+        display: block;
+        margin: auto;
+        width: auto;
+        height: 500px;
+        border: 1px solid #888;
+    }
+   #console {
+        display: block;
+        margin: auto;
+        width: auto;
+        height: 500px;
+        border: 1px solid #888;
+    }
+	</style>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+<SCRIPT type="text/javascript">
+//initialize with defaults
+$("#input-id1").fileinput();
+
+// with plugin options
+$("#input-id1").fileinput({'showUpload':false, 'previewFileType':'any'});
+
+	window.history.forward();
+	function noBack() { window.history.forward();}
+</SCRIPT>
+  </head>
+  <BODY onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
+  <nav class='navbar navbar-default'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='?action=' ><img style='margin-top:-10px'width="100px" src="https://eriks-it.com/mcwebi.png"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav'>
+        <li><a href='?action='>Home</a></li>
+        <li><a href='?action=status'>Status</a></li>
+        <li><a href='?action=plugins'>Plugins</a></li>       
+        <li><a href='?action=console'>Console</a></li>     
+        <li><a href='?action=filebrowser'>Filebrowser</a></li> 
+        <li><a href='?action=bungeecord'>Bungee/Multiserver</a></li>
+        <li><a href='?action=users'>Users</a></li>  
+      </ul>
+      <ul class='nav navbar-nav navbar-right'>
+		<li class='dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Remote {server} <span class='caret'></span></a>
+          <ul class='dropdown-menu'>
+            <li><a href='?action=remote&id='>Default</a></li>
+            {server_list}
+          </ul>
+        </li>
+        <li class='dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Restart <span class='caret'></span></a>
+          <ul class='dropdown-menu'>
+            <li><a href='?action=stop'>Stop</a></li>
+            <li><a href='?action=reload'>Reload</a></li>
+          </ul>
+        </li>
+ 		<li class='dropdown'>
+          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>{username} <span class='caret'></span></a>
+          <ul class='dropdown-menu'>
+            <li><a href='?action=logout'>Logout</a></li>
+            <li><a href='?action=cpw'>Change Password</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="container">
+	{site}
+    </div> <!-- /container -->
+
+    <!-- /.container -->
+
+<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var textarea = $('textarea[name="text"]');
+    textarea.hide();
+    var editor = ace.edit("editor_div");
+    editor.getSession().setMode("ace/mode/yaml");
+    $('#editor_save').on('click', function() {
+        textarea.val(editor.getSession().getValue());
+    });
+
+</script>
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../dist/js/vendor/video.js"></script>
+    <script src="../dist/js/flat-ui.min.js"></script>
+
+  </body>
+</html>
