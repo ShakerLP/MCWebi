@@ -118,7 +118,7 @@ public class Actions {@
                 } catch (IOException e) {}
             }
             if (map.get("action").equals("tc")) {
-                if (hasPermissions(DebugServer.logged.get(session.getCookies().read("session")), session.getCookies().read("server"), "ops")) {
+                if (hasPermissions(DebugServer.logged.get(session.getCookies().read("session")), session.getCookies().read("server"), "tc")) {
 	                	if(session.getParms().containsKey("c")){
 	                		if(session.getParms().containsKey("m")){
 		                		List<String> lst = Config.data.getStringList("tc."+session.getCookies().read("server"));
@@ -612,6 +612,7 @@ public class Actions {@
                             + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), null, "ops") + " name='_ops' value='true'>&nbsp;OPs</label></span>"
                             + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), null, "bans") + " name='_bans' value='true'>&nbsp;Bans</label></span>"
                             + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), null, "whitelist") + " name='_whitelist' value='true'>&nbsp;Whitelist</label></span>"
+                            + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), null, "tc") + " name='_tc' value='true'>&nbsp;Timed commands</label></span>"
                             + "<br>";
                             for (String s: Config.data.getStringList("servers")) {
                                 String[] arsch = s.split(",");
@@ -619,7 +620,8 @@ public class Actions {@
                                 + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "restart") + " name='" + arsch[0] + "_restart' value='true'>&nbsp;Restart</label></span>" 
                                 + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "ops") + " name='" + arsch[0] + "_ops' value='true'>&nbsp;OPs</label></span>" 
                                 + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "bans") + " name='" + arsch[0] + "_bans' value='true'>&nbsp;Bans</label></span>" 
-                                + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "whitelist") + " name='" + arsch[0] + "_whitelist' value='true'>&nbsp;Whitelist</label></span>" 
+                                + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "whitelist") + " name='" + arsch[0] + "_whitelist' value='true'>&nbsp;Whitelist</label></span>"
+                                + "<span class=''><label><input type='checkbox' " + hasPermissionsC(map.get("user"), arsch[0], "tc") + " name='" + arsch[0] + "_tc' value='true'>&nbsp;Timed commands</label></span>" 
                                 + "<br>";
                             }
                             msg += "<input type='submit' value='Save' class='btn btn-success'></form><br>";
