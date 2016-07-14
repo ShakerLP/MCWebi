@@ -1,0 +1,6 @@
+name: MCWebi
+version: 1.30
+main: me.ShakerLP.MCWebi
+author: ShakerLP
+commands:
+    mcwebi:

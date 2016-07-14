@@ -1,0 +1,6 @@
+metrics: true
+port: 4128
+ip: iphere
+username: admin
+password: admin
+demo: false
